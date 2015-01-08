@@ -1,47 +1,36 @@
 {
-    "name": "YunoHost example app",
-    "id": "ynhexample",
+    "name": "Movim",
+    "id": "movim",
     "description": {
-        "en": "Example package for Yunohost applications."
+        "en": "The Kickass Social Network"
     },
-    "licence": "GPL-2",
-    "developer": {
-        "name": "John doe",
-        "email": "john.doe@example.com",
-        "url": "http://example.com"
-    },
-    "multi_instance": "false",
+    "multi_instance": "true",
     "arguments": {
         "install" : [
             {
                 "name": "domain",
                 "ask": {
-                    "en": "Choose a domain for ynhexample"
+                    "en": "Choose a domain for Movim",
+                    "fr": "Choisissez un domaine pour Movim"
                 },
-                "example": "example.com"
+                "example": "domain.org"
             },
             {
                 "name": "path",
                 "ask": {
-                    "en": "Choose a path for ynhexample"
+                    "en": "Choose a path for Movim",
+                    "fr": "Choisissez un chemin pour Movim"
                 },
-                "example": "/example",
-                "default": "/example"
+                "example": "/movim",
+                "default": "/movim"
             },
             {
                 "name": "admin",
                 "ask": {
-                    "en": "Choose an admin user"
+                    "en": "Choose the Movim administrator (must be an existing YunoHost user)",
+                    "fr": "Administrateur du site (doit être un utilisateur YunoHost existant)"
                 },
-                "example": "johndoe"
-            },
-            {
-                "name": "is_public",
-                "ask": {
-                    "en": "Is it a public application ?"
-                },
-                "choices": ["Yes", "No"],
-                "default": "Yes"
+                "example": "homer"
             }
         ]
     }

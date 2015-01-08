@@ -1,11 +1,18 @@
 #!/bin/bash
-app=ynhexample
+app=movim
 
 # Retrieve arguments
 domain=$(sudo yunohost app setting $app domain)
 path=$(sudo yunohost app setting $app path)
 admin=$(sudo yunohost app setting $app admin)
 is_public=$(sudo yunohost app setting $app is_public)
+
+db_user=movim
+db_name=movim
+root_pwd=$(sudo cat /etc/yunohost/mysql)
+
+mysql -u root -p$root_pwd -e "DROP DATABASE $db_name ; DROP USER $db_user@localhost ;"
+
 
 # Remove sources
 sudo rm -rf /var/www/$app
